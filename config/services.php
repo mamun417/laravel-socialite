@@ -47,4 +47,16 @@ return [
         'client_secret' => 'SuERtUzVaBLvpmwjEz3Eex1e',
         'redirect' => 'http://localhost/laravel-socialite/public/login/google/callback'
     ],
+
+    'twitter' => [
+        'client_id' => 'WWAfVmWMXcdKR8lfD5lOxmI5K',
+        'client_secret' => '18SsOzD7te9mg3F2WN2ycGXst6IxqrkaJvie4A9jkDdSJIvx6w',
+        'redirect' => 'http://localhost/laravel-socialite/public/login/twitter/callback'
+    ],
+
+    'linkedin' => [
+        'client_id' => '78khf88p1jtz89',
+        'client_secret' => 'xO6DQTbcKJANLqFb',
+        'redirect' => 'http://localhost/laravel-socialite/public/login/linkedin/callback'
+    ],
 ];

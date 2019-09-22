@@ -30,6 +30,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+        'client_id' => '906129273056222',
+        'client_secret' => '261558c8965e54ce14d78644ba2d7d37',
+        'redirect' => 'https://localhost/laravel-socialite/public/login/facebook/callback'
+    ],
+
     'github' => [
         'client_id' => 'Iv1.a3cb5fc08ad9437c',
         'client_secret' => 'c87703f87a6dcda89e2ea7ab54de0a7f39fc20bd',

@@ -69,6 +69,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Login With') }}</label>
 
                             <div class="col-sm-12 text-center">
+                                <a href="{{ url('login/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
                                 <a href="{{ url('login/google') }}" class="btn btn-primary"><i class="fa fa-google"></i> Google</a>
                                 <a href="{{ url('login/github') }}" class="btn btn-primary"><i class="fa fa-github"></i> Github</a>
                             </div>

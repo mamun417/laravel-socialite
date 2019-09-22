@@ -30,4 +30,15 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'github' => [
+        'client_id' => 'Iv1.a3cb5fc08ad9437c',
+        'client_secret' => 'c87703f87a6dcda89e2ea7ab54de0a7f39fc20bd',
+        'redirect' => 'http://localhost/laravel-socialite/public/login/github/callback'
+    ],
+
+    'google' => [
+        'client_id' => '257002395849-hqbrgcngod7iprnb07qdcn4cdv2vab5i.apps.googleusercontent.com',
+        'client_secret' => 'SuERtUzVaBLvpmwjEz3Eex1e',
+        'redirect' => 'http://localhost/laravel-socialite/public/login/google/callback'
+    ],
 ];

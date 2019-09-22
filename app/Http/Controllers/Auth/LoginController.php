@@ -60,8 +60,6 @@ class LoginController extends Controller
     {
         $userSocial = Socialite::driver($provider)->user();
 
-        //dd($userSocial);
-
         $user = $this->checkExitUser($provider, $userSocial->getEmail(), $userSocial->id);
 
         if(!$user){

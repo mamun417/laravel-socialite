@@ -41,6 +41,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
     /**
      * Redirect the user to the GitHub authentication page.
      *
@@ -62,12 +63,12 @@ class LoginController extends Controller
 
         $user = $this->checkExitUser($provider, $userSocial->getEmail(), $userSocial->id);
 
-        if(!$user){
+        if (!$user) {
 
             $user = User::create([
-                'name'        => $userSocial->name?:$userSocial->nickname,
-                'email'       => $userSocial->email,
-                'provider'    => $provider,
+                'name' => $userSocial->name ?: $userSocial->nickname,
+                'email' => $userSocial->email,
+                'provider' => $provider,
                 'provider_id' => $userSocial->id
             ]);
         }
@@ -77,15 +78,17 @@ class LoginController extends Controller
         return redirect()->action('HomeController@index');
     }
 
-    public function checkExitUser($provider, $email, $provider_id){
-
-        if ($email){
-            $user = User::where(['email' => $email])->where('provider', $provider)->first();
-            if ($user) return $user;
+    public function checkExitUser($provider, $email, $provider_id)
+    {
+        if ($email) {
+            if ($user = User::where('email', $email)->first()) {
+                return $user;
+            }
+        } else {
+            if ($user = User::where('provider_id', $provider_id)->where('provider', $provider)->first()) {
+                return $user;
+            }
         }
-
-        $user = User::where('provider_id', $provider_id)->where('provider', $provider)->first();
-        if ($user) return $user;
 
         return false;
     }
@@ -93,7 +96,7 @@ class LoginController extends Controller
     /**
      * Log the user out of the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
